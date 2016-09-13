@@ -40,3 +40,20 @@ echo "email1@example.com\nemail2@example.com" > /opt/biosolicit/queue.txt
 # run every tuesday at 9:00 am
 (crontab -l; echo "00 09 * * TUE $(whoami) bash /opt/biosolicit/run.sh") | crontab -
 ```
+
+## Example log entries
+```
+Sep 13 15:43:04 /opt/biosolicit/victim.sh[9115]: biosolicit, i choose you! awaken!!!
+Sep 13 15:43:04 /opt/biosolicit/victim.sh[9119]: no victims in message file: /opt/biosolicit/message.txt
+Sep 13 15:43:04 /opt/biosolicit/victim.sh[9120]: going to sleep...Zzz
+Sep 13 15:43:31 /opt/biosolicit/victim.sh[10322]: biosolicit, i choose you! awaken!!!
+Sep 13 15:43:31 /opt/biosolicit/victim.sh[10328]: chose victim: email@example.com
+Sep 13 15:43:31 /opt/biosolicit/victim.sh[10330]: queuing email for email@example.com on mailgun
+Sep 13 15:43:32 /opt/biosolicit/victim.sh[10337]: message messaged on mailgun!
+Sep 13 15:43:32 /opt/biosolicit/victim.sh[10338]: checking delivery status of email to email@example.com
+Sep 13 15:43:32 /opt/biosolicit/victim.sh[10385]: no emails detected...
+Sep 13 15:43:37 /opt/biosolicit/victim.sh[10589]: no emails detected...
+Sep 13 15:43:43 /opt/biosolicit/victim.sh[10992]: email delivered
+Sep 13 15:43:43 /opt/biosolicit/victim.sh[10994]: entry email@example.com moved to delivered file: /opt/biosolicit/delivered.txt
+
+```
